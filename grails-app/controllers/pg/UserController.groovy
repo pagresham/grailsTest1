@@ -3,7 +3,15 @@ package pg
 class UserController {
 //    def index() { }
     def show() {
-        render("show all users")
+        render(view: "show", model: [users: User.list()])
+    }
+
+    def showloans() {
+        render(view: "showloans", loans: Loan.list() )
+    }
+
+    def adduser() {
+
     }
 
 }

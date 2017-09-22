@@ -13,3 +13,20 @@
 *= require mobile
 *= require_self
 */
+
+.addUser {
+    width: 100%;
+    padding: 2em;
+}
+.coloredNavs {
+    background: linear-gradient(to right, #4c9bb9 , #79B94C);
+}
+.coloredNavsRev {
+    background: linear-gradient(to left,  #4c9bb9, #79B94C);
+}
+.user {
+    width: 200px;
+}
+.userInputForm {
+    padding: 1em;
+}
