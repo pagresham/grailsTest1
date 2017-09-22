@@ -28,7 +28,7 @@
         </g:form>
     </div>
     <div class="addUser">
-        <g:link class="btn btn-info" action="adduser" controller="user">Enter New User</g:link>
+        <g:link class="btn btn-info" action="addnewuser" controller="user">Enter New User</g:link>
     </div>
 </div>
 
