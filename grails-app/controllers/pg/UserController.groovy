@@ -58,6 +58,8 @@ class UserController {
     def add_user_loan() {
         println "ADD_USER_LOAN PARAMS" + getParams()
 
+        redirect(action: "addloan", params: [id: params.id, error_message: "New Loan not created."])
+
         if(params.lenderName && params.loanType && params.loanNumber && params.balance) {
             def l = new Loan(
                     lenderName: params.lenderName,
@@ -70,8 +72,8 @@ class UserController {
                 l.save()
             }
             else {
-                println "FALSEEEEEEEEEEEEEEEEEEEE"
-                l.errors.allErrors.each {println it}
+                println "FALSEEEEEEEEEE"
+                l.errors.allErrors.each {println it; println}
                 redirect(action: "addloan", params: [id: params.id, error_message: "New Loan not created."])
                 return
             }
