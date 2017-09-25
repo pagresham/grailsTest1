@@ -25,11 +25,17 @@
             <p>
 
             </p>
+
+            <div class="addUser">
+                <g:actionSubmit class="btn btn-info" value="Submit" action="addnewuser"/>
+            </div>
         </g:form>
+        <div>
+            <p class="errorText">${params.error_message}</p>
+            %{--<p class="errorText">Default message</p>--}%
+        </div>
     </div>
-    <div class="addUser">
-        <g:link class="btn btn-info" action="addnewuser" controller="user">Enter New User</g:link>
-    </div>
+
 </div>
 
 </body>

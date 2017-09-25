@@ -1,15 +1,17 @@
 package pg
 
 class Loan {
-    Integer loanNumber
     String lenderName
-    Date startDate
     Integer balance
     String loanType
+    Integer loanNumber
+
+    static belongsTo = [user: User]
 
     static constraints = {
-        loanType inList: ["Federal", "Private", "Other"]
-        loanNumber min: 0
-        balance min: 0
+        loanType inList: ["Federal", "Private", "Personal"], blank: false
+        loanNumber min: 0, unique: true, blank: false
+        balance min: 0, blank: false
+        lenderName size: 1..30, blank: false
     }
 }

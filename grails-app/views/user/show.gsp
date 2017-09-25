@@ -9,10 +9,13 @@
     <h2>View All Users</h2>
     <div>
         <table>
-            <tr><th>User ID</th><th>Name</th><th>Birthdate</th></tr>
+            <tr><th>User ID</th><th>Name</th><th>Birthdate</th><th>View Loans</th></tr>
             <g:each var="user" in="${users}">
                 <tr>
-                    <td>${user.id}</td><td>${user.fname} ${user.lname}</td><td>${user.birthdate.format( 'MM-dd-yyyy')}</td>
+                    <td>${user.id}</td>
+                    <td>${user.fname} ${user.lname}</td>
+                    <td>${user.birthdate}</td>
+                    <td class="loanLink"><g:link action="show_user_loans" id="${user.id}">Loans</g:link></td>
                 </tr>
             </g:each>
         </table>

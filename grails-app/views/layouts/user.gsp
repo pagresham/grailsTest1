@@ -13,46 +13,52 @@
     <g:layoutHead/>
 </head>
 <body>
+<div id="wrap">
+    <div id="main">
+        <div class="navbar navbar-default navbar-static-top coloredNavs" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/#">
+                        <i class="fa grails-icon">
+                            %{--<asset:image src="grails-cupsonly-logo-white.svg"/>--}%
+                        </i>$$ MVC Loan Demo $$
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <g:pageProperty name="page.nav" />
+                        <li><g:link controller="user" action="show">Users</g:link></li>
+                        <li><g:link controller="user" action="showloans">Loans</g:link></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-<div class="navbar navbar-default navbar-static-top coloredNavs" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/#">
-                <i class="fa grails-icon">
-                    %{--<asset:image src="grails-cupsonly-logo-white.svg"/>--}%
-                </i>$$ Loans 'R' Us $$
-            </a>
-        </div>
-        <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-            <ul class="nav navbar-nav navbar-right">
-                <g:pageProperty name="page.nav" />
-                <li><g:link controller="user" action="show">Users</g:link></li>
-                <li><g:link controller="user" action="showloans">Loans</g:link></li>
-            </ul>
-        </div>
+        <g:layoutBody/>
     </div>
 </div>
 
-<g:layoutBody/>
+<div class="footer">
+    <div class="navbar navbar-default navbar-static-bottom coloredNavs" role="navigation">
+        <div class="container text-right">
+            <div class="navbar-header ">
 
-<div class="navbar navbar-default navbar-static-bottom coloredNavs" role="navigation">
-    <div class="container text-right">
-        <div class="navbar-header ">
+
+            </div>
+            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
+                <ul class="nav navbar-nav navbar-right">
 
 
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-            <ul class="nav navbar-nav navbar-right">
 
-
-            </ul>
-        </div>
     </div>
 </div>
 

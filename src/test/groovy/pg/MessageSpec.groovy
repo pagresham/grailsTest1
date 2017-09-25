@@ -13,6 +13,6 @@ class MessageSpec extends Specification implements DomainUnitTest<Message> {
 
     void "test something"() {
         expect:"fix me"
-            true == false
+//            true == false
     }
 }
