@@ -1,9 +1,9 @@
 package pg
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class MessageSpec extends Specification implements DomainUnitTest<Message> {
+class UserServiceSpec extends Specification implements ServiceUnitTest<UserService>{
 
     def setup() {
     }
@@ -13,6 +13,6 @@ class MessageSpec extends Specification implements DomainUnitTest<Message> {
 
     void "test something"() {
         expect:"fix me"
-//            true == false
+            true == false
     }
 }

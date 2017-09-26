@@ -27,7 +27,7 @@
             </p>
 
             <div class="addUser">
-                <g:actionSubmit class="btn btn-info" value="Submit" action="addnewuser"/>
+                <g:actionSubmit class="btn btn-info" value="Submit" action="addnewuserNEW"/>
             </div>
         </g:form>
         <div>

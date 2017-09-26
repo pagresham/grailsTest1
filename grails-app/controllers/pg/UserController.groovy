@@ -1,7 +1,11 @@
 package pg
 
+import grails.validation.ValidationException
+
 class UserController {
-//    def index() { }
+    def index() {
+        redirect action: "show"
+    }
     def show() {
         render(view: "show", model: [users: User.list()])
     }
@@ -13,8 +17,10 @@ class UserController {
     def adduser() {
     }
 
+
+
     def addnewuser() {
-        println getParams()
+//        println getParams()
 
         if(params.fname && params.lname && params.birthday) {
             def bd = Date.parse("yyyy-MM-dd",  params.birthday)
@@ -37,6 +43,41 @@ class UserController {
         redirect(action: "show")
 
     }
+
+
+
+    def addnewuserNEW() {
+//        println getParams()
+
+        try {
+            UserService userService
+            userService.addUser(params.fname, params.lname, params.birthday)
+            redirect(action: "show")
+        }
+        catch (ValidationException e) {
+            println "One of the fields was not true"
+            // Not sure if this is the best way to do this //
+            redirect(action: "adduser", params: [error_message: "All fields are required"])
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
     def show_user_loans() {
         println "show_userz-loans ID " + params.id

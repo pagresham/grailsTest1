@@ -41,6 +41,7 @@ h2 {
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
     background-color:#FFF3F3;
+    /* background-color:red; */
     line-height: 1.5;
     overflow: hidden;
     padding: 5px;
