@@ -23,12 +23,33 @@ class BootStrap {
         def date4 = Date.parse("yyyy-MM-dd", "2012-06-01")
         def user4 = new User(fname: "sage", lname: "Gresham", birthdate: date4).save()
 
+        def date5 = Date.parse("yyyy-MM-dd", "1984-03-11")
+        def user5 = new User(fname: "Amanda", lname: "Marie", birthdate: date5).save()
+
+        def date6 = Date.parse("yyyy-MM-dd", "1945-10-21")
+        def user6 = new User(fname: "Madeline", lname: "Haisten", birthdate: date6).save()
+
+        def date7 = Date.parse("yyyy-MM-dd", "1956-07-07")
+        def user7 = new User(fname: "Thomas", lname: "Pierce", birthdate: date7).save()
+
+        def date8 = Date.parse("yyyy-MM-dd", "2000-07-02")
+        def user8 = new User(fname: "Jimmy", lname: "Martin", birthdate: date8).save()
+
         // Loans
         def loanDate1 = Date.parse("yyyy-MM-dd", "2000-03-02")
 
 
         def loan1 = new Loan(lenderName: "USAA", loanNumber: 123, balance: 100, loanType: "Federal", user: user1).save()
         def loan2 = new Loan(lenderName: "Bank of the West", loanNumber: 321, balance: 1200, loanType: "Private", user: user1).save()
+        def loan3 = new Loan(lenderName: "Key Bank", loanNumber: 212, balance: 1400, loanType: "Private", user: user3).save()
+        def loan4 = new Loan(lenderName: "Bank of the West", loanNumber: 213, balance: 1700, loanType: "Private", user: user4).save()
+        def loan5 = new Loan(lenderName: "USAA", loanNumber: 723, balance: 800, loanType: "Federal", user: user5).save()
+        def loan6 = new Loan(lenderName: "Bank of the West", loanNumber: 3261, balance: 1200, loanType: "Private", user: user6).save()
+        def loan7 = new Loan(lenderName: "Key Bank", loanNumber: 1243, balance: 10000, loanType: "Federal", user: user7).save()
+        def loan8 = new Loan(lenderName: "Bank of the West", loanNumber: 3321, balance: 2200, loanType: "Private", user: user8).save()
+        def loan9 = new Loan(lenderName: "USAA", loanNumber: 1230, balance: 2100, loanType: "Federal", user: user1).save()
+        def loan10 = new Loan(lenderName: "Key Bank", loanNumber: 23321, balance: 1700, loanType: "Private", user: user2).save()
+        def loan11 = new Loan(lenderName: "Mother", loanNumber: 8675309, balance: 7200, loanType: "Personal", user: user1).save()
 
     }    
     def destroy = {

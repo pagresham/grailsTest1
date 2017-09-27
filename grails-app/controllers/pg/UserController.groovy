@@ -2,12 +2,33 @@ package pg
 
 import grails.validation.ValidationException
 
+
 class UserController {
+//    "C:\Program Files\Git\bin\sh.exe" -li  == line to put into intellij settings to get bash to run as shell
+
+    def userService
+
     def index() {
         redirect action: "show"
     }
     def show() {
-        render(view: "show", model: [users: User.list()])
+        def searchedList
+        def allUsers = User.list()
+        // Check if letter search field is set
+        if(params.letter) {
+            searchedList = userService.findUserByLetter(params.letter)
+            render(view:"show", model: [users: searchedList, allUsers: allUsers, selLetter: params.letter, selID: "0"])
+        }
+
+        else if(params.userID){
+            searchedList = userService.findUserByID(params.userID)
+            render(view: "show", model: [users: searchedList, allUsers: allUsers, selID: params.userID])
+        }
+
+        else {
+            render(view: "show", model: [users: allUsers, allUsers: allUsers, selID: "0"])
+        }
+
     }
 
     def showloans() {
@@ -19,58 +40,47 @@ class UserController {
 
 
 
+
     def addnewuser() {
-//        println getParams()
-
-        if(params.fname && params.lname && params.birthday) {
-            def bd = Date.parse("yyyy-MM-dd",  params.birthday)
-            def newUser = new User(fname: params.fname, lname: params.lname, birthdate: bd)
-
-
-
-            if(newUser.validate()) {
-                newUser.save()
-                println "New User Saved!"
-                println newUser.toString()
-            }
-        } else {
-            println "One of the fields was not true"
-            // Not sure if this is the best way to do this //
-            redirect(action: "adduser", params: [error_message: "All fields are required"])
-            return
-        }
-
-        redirect(action: "show")
-
-    }
-
-
-
-    def addnewuserNEW() {
-//        println getParams()
+        println getParams()
 
         try {
-            UserService userService
+
             userService.addUser(params.fname, params.lname, params.birthday)
             redirect(action: "show")
         }
         catch (ValidationException e) {
+
             println "One of the fields was not true"
+            println e
             // Not sure if this is the best way to do this //
             redirect(action: "adduser", params: [error_message: "All fields are required"])
         }
-
-
-
-
-
-
-
-
-
     }
 
+    // Tester Method
+    def seelist() {
+        try {
+            def loanList = userService.getAllLoans()
+            render(loanList[0].user.fname)
 
+        }
+        catch (ValidationException e) {
+            println e
+        }
+    }
+
+    // Tester Method
+    def seejson() {
+        def jsonObj = userService.findjson()
+        render(jsonObj.person.name)
+    }
+
+    // Tester Method
+    def findexample() {
+        def searchedList = userService.findUserByLetter("Ph")
+        render(searchedList)
+    }
 
 
 
@@ -99,9 +109,6 @@ class UserController {
     def add_user_loan() {
         println "ADD_USER_LOAN PARAMS" + getParams()
 
-        redirect(action: "addloan", params: [id: params.id, error_message: "New Loan not created."])
-
-        if(params.lenderName && params.loanType && params.loanNumber && params.balance) {
             def l = new Loan(
                     lenderName: params.lenderName,
                     balance: params.balance,
@@ -114,11 +121,11 @@ class UserController {
             }
             else {
                 println "FALSEEEEEEEEEE"
-                l.errors.allErrors.each {println it; println}
+                l.errors.allErrors.each {println it; println ""}
                 redirect(action: "addloan", params: [id: params.id, error_message: "New Loan not created."])
                 return
             }
-        }
+
         redirect(action: "show_user_loans", params: [id: params.id])
     }
 

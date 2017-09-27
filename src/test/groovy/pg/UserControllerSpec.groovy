@@ -3,7 +3,9 @@ package pg
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
+
 class UserControllerSpec extends Specification implements ControllerUnitTest<UserController> {
+
 
     def setup() {
     }
@@ -13,6 +15,6 @@ class UserControllerSpec extends Specification implements ControllerUnitTest<Use
 
     void "test something"() {
         expect:"fix me"
-//            true == false
+          1 == 1
     }
 }

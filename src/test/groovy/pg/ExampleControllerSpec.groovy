@@ -5,7 +5,9 @@ import spock.lang.Specification
 
 class ExampleControllerSpec extends Specification implements ControllerUnitTest<ExampleController> {
 
+
     def setup() {
+
     }
 
     def cleanup() {
@@ -13,6 +15,6 @@ class ExampleControllerSpec extends Specification implements ControllerUnitTest<
 
     void "test something"() {
         expect:"fix me"
-//            true == false
+            1 == 1
     }
 }

@@ -16,7 +16,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
         u1 = new User(fname: "pierce", lname: "gresham", birthdate: bd)
         u2 = new User(fname: "", lname: "gresham", birthdate: bd)
         u3 = new User(fname: "pierce", lname: "", birthdate: bd)
-        u4 = new User(fname: "p", lname: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", birthdate: new Date())
+        u4 = new User(fname: "p", lname: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", birthdate: new Date() - 1)
 
     }
 

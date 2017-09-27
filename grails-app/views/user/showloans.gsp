@@ -6,7 +6,10 @@
 </head>
 <body>
 <div>
-    <h2>View All Loans</h2>
+    <div style="padding-left: 1em;">
+        <h2>Viewing All Loans</h2>
+    </div>
+
     <div>
         <table>
             <tr><th>Loan Owner</th><th>Lender Name</th><th>Loan Type</th><th>Loan Number</th><th>Loan Balance</th></tr>
