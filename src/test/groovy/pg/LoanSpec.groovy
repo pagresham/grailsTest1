@@ -11,8 +11,8 @@ class LoanSpec extends Specification implements DomainUnitTest<Loan> {
         u1 = new User(fname: "pierce", lname: "gresham", birthdate: new Date())
         // Create new loan with info and passed user
         l1 = new Loan(lenderName: "USAA", loanNumber: 123, balance: 100, loanType: "Federal", user: u1)
-        l2 = new Loan(lenderName: "USAA", loanNumber: 123, balance: -1, loanType: "Federal", user: u1)
-        l3 = new Loan(lenderName: "USAA", loanNumber: 123, balance: 100, loanType: "Different", user: u1)
+        l2 = new Loan(lenderName: "USAA", loanNumber: 234, balance: -1, loanType: "Federal", user: u1)
+        l3 = new Loan(lenderName: "USAA", loanNumber: 345, balance: 100, loanType: "Different", user: u1)
         l4 = new Loan(lenderName: "USAA", loanNumber: -1, balance: 100, loanType: "Federal", user: u1)
 
     }
@@ -24,11 +24,17 @@ class LoanSpec extends Specification implements DomainUnitTest<Loan> {
     void "test something"() {
 
         expect:"fix me"
-            l1.validate()
-            !l2.validate()
-            !l3.validate()
-            !l4.validate()
+//            l1.validate()
+//            !l2.validate()
+//            !l3.validate()
+//            !l4.validate()
+//            l1.loanNumber == 123
+            u1.fname == "pierce"
+            l1.lenderName == "USAA"
             l1.loanNumber == 123
+            l1.balance == 100
+            l1.loanType == "Federal"
+            l1.user == u1
     }
 
 }
