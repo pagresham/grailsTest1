@@ -5,7 +5,7 @@ import grails.validation.ValidationException
 
 class UserController {
 //    "C:\Program Files\Git\bin\sh.exe" -li  == line to put into intellij settings to get bash to run as shell
-
+    // Test Message to see if this is reall the home branch
     def userService
 
     def index() {
