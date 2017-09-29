@@ -69,7 +69,7 @@
 
 
         </table>
-        <h3>Not the sticky form data in the above two fields</h3>
+        <h3>Note the sticky form data in the above two fields</h3>
     </div>
 
 </div>
