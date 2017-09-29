@@ -3,6 +3,7 @@ package pg
 import grails.validation.ValidationException
 import grails.gorm.transactions.Transactional
 import groovy.json.JsonSlurper
+import org.apache.commons.logging.LogFactory
 
 
 @Transactional
@@ -33,7 +34,6 @@ class UserService {
         def jsonSlurper = new JsonSlurper()
         // Returns an obj representation of the json text //
         return jsonSlurper.parseText(sampleJson)
-
     }
 
     List<User> findUserByLetter(letter){
@@ -46,6 +46,11 @@ class UserService {
         User.findAll("from User as u where u.id = ?", [ Long.parseLong(userID)])
     }
 
+
+//    private static final log = LogFactory.getLog(this)
+    def index() {
+        log.error("In index method")
+    }
 
 
 }

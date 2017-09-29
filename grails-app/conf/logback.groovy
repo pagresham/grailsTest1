@@ -22,6 +22,19 @@ appender('STDOUT', ConsoleAppender) {
     }
 }
 
+// Start addition
+appender("InfoLog", FileAppender) {
+    file = "logs/info.log"
+    append = true
+    encoder(PatternLayoutEncoder) {
+        pattern = "%level %logger - %msg%n"
+    }
+}
+//logger("InfoLog", INFO, ['InfoLog'], false)
+
+// End addition
+
+
 def targetDir = BuildSettings.TARGET_DIR
 if (Environment.isDevelopmentMode() && targetDir != null) {
     appender("FULL_STACKTRACE", FileAppender) {

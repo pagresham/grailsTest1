@@ -2,7 +2,6 @@ package pg
 
 import grails.validation.ValidationException
 
-
 class UserController {
 //    "C:\Program Files\Git\bin\sh.exe" -li  == line to put into intellij settings to get bash to run as shell
 
@@ -53,10 +52,14 @@ class UserController {
         try {
 
             userService.addUser(params.fname, params.lname, params.birthday)
+            log.error("INFO This is a success Message " + new Date())
+
+
+
             redirect(action: "show")
         }
         catch (ValidationException e) {
-
+            log.error "Error: ${e.message}"
             println "One of the fields was not true"
             println e
             // Not sure if this is the best way to do this //
