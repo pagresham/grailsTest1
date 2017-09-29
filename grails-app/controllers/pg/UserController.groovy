@@ -13,25 +13,56 @@ class UserController {
 
     def userService
 
+    def login() {
+        if(params.userLogin) {
+            println "your loggedin"
+        }
+        [users: User.list()]
+    }
+    def logMe() {
+
+        def newlyLoggedUser = User.get(params.userLogin)
+        session.setAttribute("loggedUser", newlyLoggedUser)
+        println "Now loggged in as " + newlyLoggedUser.fname
+        redirect(action: 'show')
+    }
+    def logout() {
+//        [users: User.list()]
+    }
+
     def index() {
         redirect action: "show"
     }
     def show() {
+
+//        def u1 = [fname: "Sage", lname: "Gresham"]
+//        session.setAttribute("loggedUser", u1)
+
         def searchedList
         def allUsers = User.list()
         // Check if letter search field is set
         if(params.letter) {
             searchedList = userService.findUserByLetter(params.letter)
-            render(view:"show", model: [users: searchedList, allUsers: allUsers, selLetter: params.letter, selID: "0"])
+            render(view:"show", model: [users: searchedList,
+                                        allUsers: allUsers,
+                                        selLetter: params.letter,
+                                        selID: "0",
+                                        loggedUser: session["loggedUser"]])
         }
 
         else if(params.userID){
             searchedList = userService.findUserByID(params.userID)
-            render(view: "show", model: [users: searchedList, allUsers: allUsers, selID: params.userID])
+            render(view: "show", model: [users: searchedList,
+                                         allUsers: allUsers,
+                                         selID: params.userID,
+                                         loggedUser: session["loggedUser"]])
         }
 
         else {
-            render(view: "show", model: [users: allUsers, allUsers: allUsers, selID: "0"])
+            render(view: "show", model: [users: allUsers,
+                                         allUsers: allUsers,
+                                         selID: "0",
+                                         loggedUser: session["loggedUser"]])
         }
 
     }

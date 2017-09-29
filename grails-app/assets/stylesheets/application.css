@@ -41,6 +41,15 @@ html, body {
     color: seagreen;
 }
 
+.logged_user_greetings {
+    text-align: right;
+    background-color: rgba(100, 100, 155, .2);
+    padding-right: 1em;
+}
+.hoverDark:hover {
+    color: #333
+}
+
 
 /* Start sticky footer style */
 #wrap {

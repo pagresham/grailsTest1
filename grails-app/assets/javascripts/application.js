@@ -19,3 +19,12 @@ if (typeof jQuery !== 'undefined') {
         });
     })(jQuery);
 }
+
+
+$(document).ready(function(){
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+});

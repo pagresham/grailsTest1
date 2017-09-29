@@ -33,6 +33,8 @@
                 <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                     <ul class="nav navbar-nav navbar-right">
                         <g:pageProperty name="page.nav" />
+                        <li><g:link controller="user" action="login">Log In</g:link></li>
+                        <li><g:link controller="user" action="logout">Log Out</g:link></li>
                         <li><g:link controller="user" action="show">Users</g:link></li>
                         <li><g:link controller="user" action="showloans">Loans</g:link></li>
                     </ul>
@@ -45,13 +47,20 @@
 </div>
 
 <div class="footer">
+
     <div class="navbar navbar-default navbar-static-bottom coloredNavs" role="navigation">
-        <div class="container text-right">
+
+        <div class="container ">
+
             <div class="navbar-header ">
-
-
             </div>
+
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <g:render template="/layouts/footerInfo"/>
+
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
 
 

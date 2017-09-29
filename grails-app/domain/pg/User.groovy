@@ -8,9 +8,9 @@ class User {
 
     static hasMany = [loans: Loan]
 
-//    String toString(){
-//        "Name: $fname $lname, Birthdate: $birthdate"
-//    }
+    String toString(){
+        "$fname $lname"
+    }
 
     static constraints = {
         birthdate blank: false, min: new Date().parse("yyyy-MM-dd", "1900-01-01"), max: new Date()

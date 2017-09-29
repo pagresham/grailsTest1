@@ -6,6 +6,7 @@
 </head>
 <body>
 <div>
+    <g:render template="greetingTemplate" model="[loggedUser: loggedUser]"/>
     <h2>View All Users</h2>
     <div>
         <table>
@@ -65,11 +66,14 @@
                  <td><g:actionSubmit class="btn btn-info btn-sm" value="Find This User" action="show"/></td>
                 </tr>
             </g:form>
-            <tr><td></td><td></td><td><g:link action="show" class="btn btn-info btn-sm">All Users</g:link></td></tr>
+            <tr><td></td><td></td><td><g:link controller="user" action="show" class="btn btn-info btn-sm">All Users</g:link></td></tr>
 
 
         </table>
         <h3>Note the sticky form data in the above two fields</h3>
+
+
+
     </div>
 
 </div>
