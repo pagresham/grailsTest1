@@ -8,8 +8,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
     def u1, u2, u3, u4
     def setup() {
 
-        def first = "Pierce"
-        def last = "Gresham"
+
 
         def bd = Date.parse("yyyy-MM-dd", "1974-03-07")
 

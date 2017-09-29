@@ -30,7 +30,7 @@
                         </i>$$ MVC Loan Demo $$
                     </a>
                 </div>
-                <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
+                <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                     <ul class="nav navbar-nav navbar-right">
                         <g:pageProperty name="page.nav" />
                         <li><g:link controller="user" action="show">Users</g:link></li>
@@ -51,7 +51,7 @@
 
 
             </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
+            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav navbar-right">
 
 

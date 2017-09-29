@@ -4,7 +4,7 @@ import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
 class LoanSpec extends Specification implements DomainUnitTest<Loan> {
-    def u1, l1, l2, l3, l4, l5, l6, l7
+    def u1, l1, l2, l3, l4
 
     def setup() {
         // create user for new loan

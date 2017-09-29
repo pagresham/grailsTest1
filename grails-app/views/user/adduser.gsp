@@ -12,15 +12,15 @@
         <g:form action="adduser" controller="user">
             <p>
                 <label for="fname">First Name:</label>
-                <input class="form-control defInputs" type="text" name="fname">
+                <input id="fname" class="form-control defInputs" type="text" name="fname">
             </p>
             <p>
                 <label for="lname">Last Name:</label>
-                <input class="form-control defInputs" type="text" name="lname">
+                <input id="lname" class="form-control defInputs" type="text" name="lname">
             </p>
             <p>
                 <label for="birthday">Birthday:</label>
-                <input class="form-control defInputs" type="date" name="birthday">
+                <input id="birthday" class="form-control defInputs" type="date" name="birthday">
             </p>
             <p>
 

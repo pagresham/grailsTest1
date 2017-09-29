@@ -96,8 +96,8 @@ class UserController {
 
 
     def show_user_loans() {
-        println "show_userz-loans ID " + params.id
-        def userid = params.id
+        println "show_users-loans ID ${params.id}"
+        def userid = params.id as Integer
         def username = User.get(userid).fname + " " + User.get(userid).lname
         def loans = Loan.findAllWhere(user: User.get(userid))
         render(view: "show_user_loans", model: [userid: userid, username: username, loans: loans])
@@ -106,7 +106,7 @@ class UserController {
 
     def addloan() {
 
-        def id = params.id
+        def id = params.id as Integer
         println "ID ==== " + id
         def user = User.get(id)
         [user: user, id: id]
@@ -120,7 +120,7 @@ class UserController {
                     balance: params.balance,
                     loanType: params.loanType,
                     loanNumber: params.loanNumber,
-                    user: User.get(params.id))
+                    user: User.get(params.id as Integer))
             if(l.validate()) {
                 println "TRUEEEEEEEEE"
                 l.save()

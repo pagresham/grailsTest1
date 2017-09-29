@@ -9,7 +9,7 @@ import groovy.json.JsonSlurper
 class UserService {
 
 
-    def addUser(String fname, String lname, String bdayString) {
+    def addUser(fname, lname, bdayString) {
 
         def bd = Date.parse("yyyy-MM-dd",  bdayString ?: "0000-00-00")
         def newUser = new User(fname: fname, lname: lname, birthdate: bd)
@@ -36,13 +36,13 @@ class UserService {
 
     }
 
-    List<User> findUserByLetter(String letter){
+    List<User> findUserByLetter(letter){
         def upLetter = letter.toUpperCase()
         def lowLetter = letter.toLowerCase()
         User.findAll("from User as u where u.fname like ? or u.fname like ?", [upLetter + '%', lowLetter + '%'])
     }
 
-    List<User> findUserByID(String userID) {
+    List<User> findUserByID(userID) {
         User.findAll("from User as u where u.id = ?", [ Long.parseLong(userID)])
     }
 
