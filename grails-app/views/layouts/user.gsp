@@ -37,6 +37,8 @@
                         <li><g:link controller="user" action="logout">Log Out</g:link></li>
                         <li><g:link controller="user" action="show">Users</g:link></li>
                         <li><g:link controller="user" action="showloans">Loans</g:link></li>
+                        <li><g:link controller="shapes" action="index">Shapes</g:link></li>
+
                     </ul>
                 </div>
             </div>

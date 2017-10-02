@@ -27,6 +27,7 @@ class UserController {
         redirect(action: 'show')
     }
     def logout() {
+        redirect(action: "login" )
 //        [users: User.list()]
     }
 

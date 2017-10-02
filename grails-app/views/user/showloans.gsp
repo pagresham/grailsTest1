@@ -21,7 +21,7 @@
                     <td>${loan.loanNumber}</td>
                     <td>$${loan.balance}.00</td>
                 </tr>
-            </g:each>
+ s           </g:each>
         </table>
     </div>
 
