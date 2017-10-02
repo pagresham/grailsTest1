@@ -1,5 +1,8 @@
 package pg
 
+import pg.beans.Circle
+import pg.beans.Square
+
 class ShapesController {
 
     def shapeService

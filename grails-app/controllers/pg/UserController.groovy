@@ -20,13 +20,20 @@ class UserController {
         [users: User.list()]
     }
     def logMe() {
+        if(params.userLogin) {
+            def newlyLoggedUser = User.get(params.userLogin)
+            session.setAttribute("user", newlyLoggedUser)
+            session.setAttribute("userId", params.userLogin )
+            println "Now loggged in as " + newlyLoggedUser.fname
+            redirect(action: 'login')
 
-        def newlyLoggedUser = User.get(params.userLogin)
-        session.setAttribute("loggedUser", newlyLoggedUser)
-        println "Now loggged in as " + newlyLoggedUser.fname
-        redirect(action: 'show')
+        } else {
+            redirect(action: 'login')
+        }
+
     }
     def logout() {
+        session.invalidate()
         redirect(action: "login" )
 //        [users: User.list()]
     }
@@ -47,23 +54,20 @@ class UserController {
             render(view:"show", model: [users: searchedList,
                                         allUsers: allUsers,
                                         selLetter: params.letter,
-                                        selID: "0",
-                                        loggedUser: session["loggedUser"]])
+                                        selID: "0"])
         }
 
         else if(params.userID){
             searchedList = userService.findUserByID(params.userID)
             render(view: "show", model: [users: searchedList,
                                          allUsers: allUsers,
-                                         selID: params.userID,
-                                         loggedUser: session["loggedUser"]])
+                                         selID: params.userID])
         }
 
         else {
             render(view: "show", model: [users: allUsers,
                                          allUsers: allUsers,
-                                         selID: "0",
-                                         loggedUser: session["loggedUser"]])
+                                         selID: "0"])
         }
 
     }

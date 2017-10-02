@@ -7,9 +7,10 @@
     <div>
         <div class="well">
             <h2>Choose user to authinticate as...</h2>
-            <g:form controller="user" action="login" method="post">
+            <g:form controller="user" action="logme" method="post">
                 <g:select name="userLogin"
                           from="${users}"
+                          noSelection="['':'Select a User']"
                           optionKey="id"/>
                 <g:actionSubmit action="logMe" class="btn btn-info btn-sm" value="Login!"/>
             </g:form>

@@ -10,6 +10,8 @@
 //= require_tree .
 //= require_self
 
+console.log("hi there, from application.js")
+
 if (typeof jQuery !== 'undefined') {
     (function($) {
         $(document).ajaxStart(function() {

@@ -1,4 +1,4 @@
-package pg
+package pg.beans
 
 import java.awt.Color
 

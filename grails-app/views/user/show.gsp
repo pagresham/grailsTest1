@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <g:render template="greetingTemplate" model="[loggedUser: loggedUser]"/>
+    %{--<g:render template="greetingTemplate" model="[loggedUser: loggedUser]"/>--}%
     <h2>View All Users</h2>
     <div>
         <table>
@@ -25,6 +25,7 @@
     <div class="addUser">
         <g:link class="btn btn-info btn-sm" action="adduser" controller="user">Add User</g:link>
     </div>
+
     <div class="user_select_grid">
         <table>
 
@@ -75,7 +76,9 @@
 
 
     </div>
+    <script>
 
+    </script>
 </div>
 
 </body>

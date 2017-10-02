@@ -35,20 +35,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <g:pageProperty name="page.nav" />
 
-                        <li><g:link controller="user" action="show">Users</g:link></li>
-                        <li><g:link controller="user" action="showloans">Loans</g:link></li>
-                        <li><g:link controller="extras" action="index">Extras</g:link></li>
-                        <g:if test="${session['user']}">
-                            <li><g:link controller="user" action="show_user_loans" params="[id: session['userId']]">My Loans</g:link></li>
-                            <li>
-                                <g:link controller="user" action="logout" onclick="return confirm('Are you sure?')  ;">Log Out <span class="fa fa-user-o"></span></g:link>
-                            </li>
-                        </g:if>
-                        <g:else>
-                            <li>
-                                <g:link controller="user" action="login">Log In <span class="fa fa-user"></span></g:link>
-                            </li>
-                        </g:else>
+                        <li><g:link controller="user" action="show">Loan Demo</g:link></li>
+
+                        <li><g:link controller="shapes" action="index">Shapes</g:link></li>
+
                     </ul>
                 </div>
             </div>

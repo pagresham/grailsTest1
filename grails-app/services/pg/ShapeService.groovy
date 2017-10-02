@@ -1,6 +1,8 @@
 package pg
 
 import grails.gorm.transactions.Transactional
+import pg.beans.Circle
+import pg.beans.Square
 
 @Transactional
 class ShapeService {
