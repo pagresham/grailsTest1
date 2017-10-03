@@ -42,9 +42,12 @@ class UserController {
         redirect action: "show"
     }
     def show() {
+        def goodThings = userService.returnNames()
+        for(i in goodThings) {
+            println "Id: ${i.good_things_id}  Name: ${i.name}"
+        }
 
-//        def u1 = [fname: "Sage", lname: "Gresham"]
-//        session.setAttribute("loggedUser", u1)
+
 
         def searchedList
         def allUsers = User.list()

@@ -4,11 +4,13 @@ import grails.validation.ValidationException
 import grails.gorm.transactions.Transactional
 import groovy.json.JsonSlurper
 import org.apache.commons.logging.LogFactory
+import groovy.sql.Sql
+
 
 
 @Transactional
 class UserService {
-
+    def dataSource
 
     def addUser(fname, lname, bdayString) {
 
@@ -50,6 +52,14 @@ class UserService {
 //    private static final log = LogFactory.getLog(this)
     def index() {
         log.error("In index method")
+    }
+
+    def returnNames() {
+        def sqlString = "Select * from good_things"
+        // Create new Groovy SQL instance with injected DataSource.
+        final Sql sql = new Sql(dataSource)
+        final results = sql.rows(sqlString)
+        return results
     }
 
 
