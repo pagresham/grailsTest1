@@ -96,30 +96,31 @@ hibernate:
         use_query_cache: false
 dataSource:
 
-    pooled: true
-    jmxExport: true
-    driverClassName: "com.mysql.jdbc.Driver"
-    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: "root"
-    password: "pierce"
-
-# orig
+    # Added for dbWork - connection to local mySql DB
 #    pooled: true
 #    jmxExport: true
-#    driverClassName: org.h2.Driver
-#    username: sa
-#    password: ''
+#    driverClassName: "com.mysql.jdbc.Driver"
+#    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    username: "root"
+#    password: "pierce"
+
+    #orig
+    pooled: true
+    jmxExport: true
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
 
 environments:
     development:
         dataSource:
-            # going for mySql
-            dbCreate: "update"
-            url: "jdbc:mysql://localhost:3306/things"
+            # Added for dbWork - connection to local mySql DB
+#            dbCreate: "update"
+#            url: "jdbc:mysql://localhost:3306/things"
 
             # orig
-            #dbCreate: create-drop
-            #url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: create-drop
+            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
             dbCreate: update
