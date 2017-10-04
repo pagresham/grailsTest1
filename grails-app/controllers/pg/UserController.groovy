@@ -3,13 +3,6 @@ package pg
 import grails.validation.ValidationException
 
 class UserController {
-//    "C:\Program Files\Git\bin\sh.exe" -li  == line to put into intellij settings to get bash to run as shell
-
-    // Test Message to see if this is reall the home branch
-
-    // On the Mac, in Master branch I am making this edit
-
-    // On my PC !!!
 
     def userService
 
@@ -42,12 +35,6 @@ class UserController {
         redirect action: "show"
     }
     def show() {
-        def goodThings = userService.returnNames()
-        for(i in goodThings) {
-            println "Id: ${i.good_things_id}  Name: ${i.name}"
-        }
-
-
 
         def searchedList
         def allUsers = User.list()

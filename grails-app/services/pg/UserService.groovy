@@ -62,5 +62,27 @@ class UserService {
         return results
     }
 
+    def addThing(String name) {
+        def sqlString = """
+            INSERT INTO good_things
+            (name)
+            values(${name})
+"""
+        final Sql sql = new Sql(dataSource)
+        sql.execute(sqlString)
+
+    }
+
+    def remove_thing(Integer id) {
+        def sqlString = """
+            DELETE FROM good_things
+            WHERE good_things_id = ${id} 
+"""
+        final Sql sql = new Sql(dataSource)
+        sql.execute(sqlString)
+
+
+    }
+
 
 }

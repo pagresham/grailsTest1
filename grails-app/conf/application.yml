@@ -114,7 +114,7 @@ environments:
     development:
         dataSource:
             # going for mySql
-            dbCreate: "update"
+            dbCreate: create-drop
             url: "jdbc:mysql://localhost:3306/things"
 
             # orig
