@@ -54,13 +54,13 @@ class UserService {
         log.error("In index method")
     }
 
-    def returnNames() {
-        def sqlString = "Select * from good_things"
-        // Create new Groovy SQL instance with injected DataSource.
-        final Sql sql = new Sql(dataSource)
-        final results = sql.rows(sqlString)
-        return results
-    }
+//    def returnNames() {
+//        def sqlString = "Select * from good_things"
+//        // Create new Groovy SQL instance with injected DataSource.
+//        final Sql sql = new Sql(dataSource)
+//        final results = sql.rows(sqlString)
+//        return results
+//    }
 
 
 }
